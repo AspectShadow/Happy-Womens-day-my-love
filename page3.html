@@ -136,42 +136,7 @@ window.location.href="page4.html";
 
 </body>
 </html>
-<h2>One last thing...</h2>
 
-<div class="envelope">
-
-<div class="envelope-body"></div>
-<div class="envelope-left"></div>
-<div class="envelope-right"></div>
-<div class="envelope-top"></div>
-
-</div>
-
-<p>Hold to unlock my heart ❤️</p>
-
-<button
-onmousedown="startHold()"
-onmouseup="cancelHold()"
-ontouchstart="startHold()"
-ontouchend="cancelHold()">
-Hold to Unlock
-</button>
-
-<script>
-
-let timer;
-
-function startHold(){
-timer=setTimeout(()=>{
-window.location.href="page4.html";
-},3000);
-}
-
-function cancelHold(){
-clearTimeout(timer);
-}
-
-</script>
 
 </body>
 </html>
