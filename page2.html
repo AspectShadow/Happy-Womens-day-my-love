@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>What Makes You Special</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#fff0f5;
+padding-top:140px;
+overflow:hidden;
+}
+
+/* Title */
+
+h2{
+animation:fadeIn 2s;
+}
+
+/* Buttons */
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:25px;
+background:#ff4d6d;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:transform 0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* Result message */
+
+#result{
+margin-top:30px;
+font-size:18px;
+max-width:400px;
+margin-left:auto;
+margin-right:auto;
+opacity:0;
+}
+
+/* Animation for messages */
+
+.show{
+animation:messageReveal 1s forwards;
+}
+
+@keyframes messageReveal{
+0%{
+opacity:0;
+transform:translateY(20px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Secret glow */
+
+.secretText{
+color:#ff1f4b;
+font-weight:bold;
+font-size:20px;
+animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 5px #ff4d6d;}
+to{ text-shadow:0 0 20px #ff1f4b;}
+}
+
+/* Floating hearts */
+
+.heart{
+position:fixed;
+bottom:-10px;
+color:#ff4d6d;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-100vh);opacity:0;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>What makes you special?</h2>
+
+<button onclick="showSmile()">Your Smile</button>
+<button onclick="showKindness()">Your Kindness</button>
+<button onclick="showMagic()">Your Magic</button>
+<button onclick="showStrength()">Your Strength</button>
+
+<p id="result"></p>
+
+<br>
+
+<a href="page3.html">
+<button>Next Surprise →</button>
+</a>
+
+<script>
+
+function animateMessage(text){
+let result=document.getElementById("result");
+
+result.classList.remove("show");
+
+setTimeout(()=>{
+result.innerHTML=text;
+result.classList.add("show");
+},100);
+}
+
+/* Wrong button messages */
+
+function showSmile(){
+animateMessage("Your smile is beautiful enough to light up an entire room… but that's still not the most special thing about you.");
+}
+
+function showKindness(){
+animateMessage("Your kindness is rare and gentle… the kind that makes people feel safe around you.");
+}
+
+function showStrength(){
+animateMessage("Your strength is quiet but powerful… the kind that makes you truly admirable.");
+}
+
+/* Secret button */
+
+function showMagic(){
+animateMessage("<span class='secretText'>✨ Secret Unlocked ✨</span><br><br>The most special thing about you isn't just your smile, kindness, or strength...<br><br>It's the beautiful soul you are. The way you exist makes the world softer, brighter, and a little more magical.");
+}
+
+/* Floating hearts */
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(10+Math.random()*20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,600);
+
+</script>
+
+</body>
+</html>

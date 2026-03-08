@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>One Last Thing</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#fff0f5;
+padding-top:120px;
+}
+
+/* Envelope container */
+
+.envelope{
+position:relative;
+width:260px;
+height:160px;
+margin:40px auto;
+}
+
+/* Main envelope */
+
+.envelope-body{
+position:absolute;
+width:100%;
+height:100%;
+background:#ff4d6d;
+border-radius:6px;
+}
+
+/* Left triangle */
+
+.envelope-left{
+position:absolute;
+width:0;
+height:0;
+border-top:80px solid transparent;
+border-bottom:80px solid transparent;
+border-right:130px solid #ff6b85;
+left:0;
+}
+
+/* Right triangle */
+
+.envelope-right{
+position:absolute;
+width:0;
+height:0;
+border-top:80px solid transparent;
+border-bottom:80px solid transparent;
+border-left:130px solid #ff6b85;
+right:0;
+}
+
+/* Top flap */
+
+.envelope-top{
+position:absolute;
+width:0;
+height:0;
+border-left:130px solid transparent;
+border-right:130px solid transparent;
+border-top:80px solid #ff3355;
+top:0;
+}
+
+/* Float animation */
+
+.envelope{
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+/* Button */
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:#ff4d6d;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>One last thing...</h2>
+
+<div class="envelope">
+
+<div class="envelope-body"></div>
+<div class="envelope-left"></div>
+<div class="envelope-right"></div>
+<div class="envelope-top"></div>
+
+</div>
+
+<p>Hold to unlock my heart ❤️</p>
+
+<button
+onmousedown="startHold()"
+onmouseup="cancelHold()"
+ontouchstart="startHold()"
+ontouchend="cancelHold()">
+Hold to Unlock
+</button>
+
+<script>
+
+let timer;
+
+function startHold(){
+timer=setTimeout(()=>{
+window.location.href="page4.html";
+},3000);
+}
+
+function cancelHold(){
+clearTimeout(timer);
+}
+
+</script>
+
+</body>
+</html>
