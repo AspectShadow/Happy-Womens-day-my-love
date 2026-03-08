@@ -4,66 +4,50 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Your Message</title>
+<title>Next Surprise</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
-background:#fff0f5;
-text-align:center;
 margin:0;
-padding:30px;
-overflow-x:hidden;
+font-family:Arial, sans-serif;
+background:#111;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+
+/* Prevent text selection */
+user-select:none;
+-webkit-user-select:none;
+-ms-user-select:none;
+-webkit-touch-callout:none;
 }
-
-/* Image */
-
-.photo{
-width:100%;
-max-width:320px;
-border-radius:15px;
-margin-bottom:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* Letter box */
-
-.letter{
-max-width:500px;
-margin:auto;
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
-font-size:18px;
-line-height:1.6;
-}
-
-/* Title */
 
 h2{
-color:#ff4d6d;
+margin-bottom:40px;
 }
 
-/* Floating hearts */
+button{
+padding:16px 28px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
 
-.heart{
-position:fixed;
-bottom:-10px;
-color:#ff4d6d;
-animation:float 6s linear infinite;
+/* Prevent text selection */
+user-select:none;
+-webkit-user-select:none;
+-webkit-touch-callout:none;
 }
 
-@keyframes float{
-0%{
-transform:translateY(0);
-opacity:1;
-}
-100%{
-transform:translateY(-100vh);
-opacity:0;
-}
+button:active{
+transform:scale(0.95);
 }
 
 </style>
@@ -72,56 +56,15 @@ opacity:0;
 
 <body>
 
-<div class="letter">
+<h2>Ready for the Final Surprise? ❤️</h2>
 
-
-
-<h2>Happy Women's Day ❤️</h2>
-
-<p>
-On this Women's Day, I just want you to know how special you are to me.
-Your smile brightens days, and your kindness makes the world softer
-You're not just a woman you're a light, a strength, and a beautiful soul
-I'm so grateful to have you in my life
-You are the most beautiful woman I have ever met.
-you're the prettiest and perfect woman I have ever known.
-I love you more than anything in the world.
-I don't know what I would do without you.
-Thank you for everything you do for me.
-
-</p>
-<p>
-Today celebrates women, but I celebrate you.
-</p>
-  
-<p>
-  I LOVE YOU SO MUCH MAHI 💓    
-</p>  
-  
-<img src="womesday.png" class="photo" alt="Happy Women's Day">
-</div>
+<button onclick="nextPage()">Go to the Final Surprise ➜</button>
 
 <script>
 
-function createHeart(){
-
-let heart=document.createElement("div");
-
-heart.className="heart";
-heart.innerHTML="❤";
-
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(12+Math.random()*20)+"px";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},6000);
-
+function nextPage(){
+window.location.href="page4.html";
 }
-
-setInterval(createHeart,500);
 
 </script>
 
