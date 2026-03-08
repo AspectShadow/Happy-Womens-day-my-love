@@ -12,76 +12,91 @@ body{
 margin:0;
 font-family:Arial, sans-serif;
 background:#111;
-color:white;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 height:100vh;
+color:white;
 text-align:center;
 
-/* Disable text selection */
+/* disable text selection */
 user-select:none;
 -webkit-user-select:none;
--ms-user-select:none;
 -webkit-touch-callout:none;
 }
 
-/* Envelope */
+/* envelope container */
+
+.container{
+position:relative;
+width:260px;
+height:200px;
+margin-top:20px;
+}
+
+/* envelope body */
 
 .envelope{
-width:220px;
-height:150px;
-background:#d94b5a;
-position:relative;
-border-radius:5px;
-cursor:pointer;
+position:absolute;
+bottom:0;
+width:100%;
+height:140px;
+background:#c94a57;
+border-radius:6px;
+overflow:hidden;
 }
+
+/* envelope flap */
 
 .flap{
 position:absolute;
 top:0;
-left:0;
 width:0;
 height:0;
-border-left:110px solid transparent;
-border-right:110px solid transparent;
-border-bottom:75px solid #c13a4a;
+border-left:130px solid transparent;
+border-right:130px solid transparent;
+border-bottom:80px solid #b33c49;
 transform-origin:top;
-transition:transform 0.6s;
+transition:0.6s;
+z-index:3;
 }
 
-.envelope.open .flap{
-transform:rotateX(180deg);
-}
-
-/* Letter */
+/* letter */
 
 .letter{
 position:absolute;
-top:20px;
+bottom:0;
 left:10px;
-width:200px;
-height:110px;
+width:240px;
+height:130px;
 background:white;
 color:black;
-padding:10px;
+padding:15px;
 box-sizing:border-box;
 border-radius:5px;
-transform:translateY(40px);
-transition:transform 0.6s;
+transform:translateY(80px);
+transition:0.7s;
+z-index:1;
 font-size:14px;
+line-height:1.4;
 }
 
-.envelope.open .letter{
-transform:translateY(-60px);
+/* open state */
+
+.container.open .flap{
+transform:rotateX(180deg);
 }
 
-/* Button */
+.container.open .letter{
+transform:translateY(-40px);
+}
+
+/* button */
 
 button{
 margin-top:40px;
-padding:14px 22px;
+padding:14px 24px;
 font-size:18px;
 border:none;
 border-radius:8px;
@@ -89,11 +104,8 @@ background:#ff4d6d;
 color:white;
 cursor:pointer;
 
-/* Prevent text selection */
 user-select:none;
 -webkit-user-select:none;
--ms-user-select:none;
--webkit-touch-callout:none;
 }
 
 button:active{
@@ -101,22 +113,23 @@ transform:scale(0.95);
 }
 
 </style>
-
 </head>
 
 <body>
 
 <h2>Tap the Envelope 💌</h2>
 
-<div class="envelope" onclick="openLetter()" id="envelope">
+<div class="container" onclick="openLetter()" id="env">
 
 <div class="flap"></div>
 
 <div class="letter">
-Happy Women's Day ❤️<br>
-You are strong, beautiful, and amazing.<br>
+Happy Women's Day ❤️<br><br>
+You are strong, beautiful, and incredibly special to me.<br><br>
 I love you, meri jaan.
 </div>
+
+<div class="envelope"></div>
 
 </div>
 
@@ -125,7 +138,7 @@ I love you, meri jaan.
 <script>
 
 function openLetter(){
-document.getElementById("envelope").classList.toggle("open");
+document.getElementById("env").classList.toggle("open");
 }
 
 function nextPage(){
@@ -133,10 +146,6 @@ window.location.href="page4.html";
 }
 
 </script>
-
-</body>
-</html>
-
 
 </body>
 </html>
