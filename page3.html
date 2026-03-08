@@ -4,7 +4,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Open Your Letter</title>
+<title>Next Surprise</title>
 
 <style>
 
@@ -12,100 +12,38 @@ body{
 margin:0;
 font-family:Arial, sans-serif;
 background:#111;
+color:white;
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
 height:100vh;
-color:white;
 text-align:center;
 
-/* disable text selection */
+/* Prevent text selection */
 user-select:none;
 -webkit-user-select:none;
+-ms-user-select:none;
 -webkit-touch-callout:none;
 }
 
-/* envelope container */
-
-.container{
-position:relative;
-width:260px;
-height:200px;
-margin-top:20px;
+h2{
+margin-bottom:40px;
 }
-
-/* envelope body */
-
-.envelope{
-position:absolute;
-bottom:0;
-width:100%;
-height:140px;
-background:#c94a57;
-border-radius:6px;
-overflow:hidden;
-}
-
-/* envelope flap */
-
-.flap{
-position:absolute;
-top:0;
-width:0;
-height:0;
-border-left:130px solid transparent;
-border-right:130px solid transparent;
-border-bottom:80px solid #b33c49;
-transform-origin:top;
-transition:0.6s;
-z-index:3;
-}
-
-/* letter */
-
-.letter{
-position:absolute;
-bottom:0;
-left:10px;
-width:240px;
-height:130px;
-background:white;
-color:black;
-padding:15px;
-box-sizing:border-box;
-border-radius:5px;
-transform:translateY(80px);
-transition:0.7s;
-z-index:1;
-font-size:14px;
-line-height:1.4;
-}
-
-/* open state */
-
-.container.open .flap{
-transform:rotateX(180deg);
-}
-
-.container.open .letter{
-transform:translateY(-40px);
-}
-
-/* button */
 
 button{
-margin-top:40px;
-padding:14px 24px;
-font-size:18px;
+padding:16px 28px;
+font-size:20px;
 border:none;
-border-radius:8px;
+border-radius:10px;
 background:#ff4d6d;
 color:white;
 cursor:pointer;
 
+/* Prevent text selection */
 user-select:none;
 -webkit-user-select:none;
+-webkit-touch-callout:none;
 }
 
 button:active{
@@ -113,33 +51,16 @@ transform:scale(0.95);
 }
 
 </style>
+
 </head>
 
 <body>
 
-<h2>Tap the Envelope 💌</h2>
+<h2>Ready for the Final Surprise? ❤️</h2>
 
-<div class="container" onclick="openLetter()" id="env">
-
-<div class="flap"></div>
-
-<div class="letter">
-Happy Women's Day ❤️<br><br>
-You are strong, beautiful, and incredibly special to me.<br><br>
-I love you, meri jaan.
-</div>
-
-<div class="envelope"></div>
-
-</div>
-
-<button onclick="nextPage()">Final Surprise ➜</button>
+<button onclick="nextPage()">Go to the Final Surprise ➜</button>
 
 <script>
-
-function openLetter(){
-document.getElementById("env").classList.toggle("open");
-}
 
 function nextPage(){
 window.location.href="page4.html";
