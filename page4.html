@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Your Message</title>
 
 <style>
 
 body{
-font-family:Arial;
-text-align:center;
+font-family: Arial, sans-serif;
 background:#fff0f5;
-padding-top:120px;
-overflow:hidden;
+text-align:center;
+margin:0;
+padding:30px;
+overflow-x:hidden;
 }
+
+/* Image */
+
+.photo{
+width:100%;
+max-width:320px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Letter box */
+
+.letter{
+max-width:500px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+font-size:18px;
+line-height:1.6;
+}
+
+/* Title */
+
+h2{
+color:#ff4d6d;
+}
+
+/* Floating hearts */
 
 .heart{
 position:fixed;
@@ -22,16 +56,14 @@ animation:float 6s linear infinite;
 }
 
 @keyframes float{
-0%{transform:translateY(0);opacity:1;}
-100%{transform:translateY(-100vh);opacity:0;}
+0%{
+transform:translateY(0);
+opacity:1;
 }
-
-.letter{
-max-width:400px;
-margin:auto;
-background:white;
-padding:25px;
-border-radius:10px;
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
 }
 
 </style>
@@ -41,6 +73,8 @@ border-radius:10px;
 <body>
 
 <div class="letter">
+
+<img src="image.jpg" class="photo">
 
 <h2>Happy Women's Day ❤️</h2>
 
@@ -56,11 +90,11 @@ I don't know what I would do without you.
 Thank you for everything you do for me.
 
 I LOVE YOU SO MUCH MAHI 💓    
- 
+
 </p>
 
 <p>
-Today celebrates women, but I celebrate you.
+I love you, meri jaan. 💖
 </p>
 
 </div>
@@ -75,7 +109,7 @@ heart.className="heart";
 heart.innerHTML="❤";
 
 heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(10+Math.random()*20)+"px";
+heart.style.fontSize=(12+Math.random()*20)+"px";
 
 document.body.appendChild(heart);
 
